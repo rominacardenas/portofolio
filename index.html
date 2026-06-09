@@ -35,7 +35,7 @@ background:
     #030303 67%,
     #030303 100%
   );
-
+}
 /* NAV */
 
 .nav{
@@ -203,6 +203,7 @@ background:
 }
 
 .card-icon{
+
   width:54px;
   height:54px;
   border-radius:14px;
@@ -212,6 +213,16 @@ background:
   background:rgba(155,108,255,.12);
   color:#b68cff;
   font-size:28px;
+}
+
+.card-icon svg{
+  width:28px;
+  height:28px;
+  stroke:#b68cff;
+  stroke-width:1.8;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 .card h3{
@@ -391,37 +402,57 @@ background:
 
   </div>
 
-  <div class="cards">
 
-    <div class="card">
-      <div class="card-icon">□</div>
-      <div>
-        <h3>PROYECTOS</h3>
-        <p>Casos y resultados</p>
-      </div>
+
+   <div class="cards">
+
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 19V5"/>
+        <path d="M4 19h16"/>
+        <path d="M8 16v-5"/>
+        <path d="M12 16V8"/>
+        <path d="M16 16v-8"/>
+      </svg>
     </div>
-
-    <div class="card">
-      <div class="card-icon">⬡</div>
-      <div>
-        <h3>HERRAMIENTAS</h3>
-        <p>Tecnologías y recursos</p>
-      </div>
+    <div>
+      <h3>Marketing Ops</h3>
+      <p>Procesos, CRM y automatización.</p>
     </div>
-
-    <div class="card">
-      <div class="card-icon">⌂</div>
-      <div>
-        <h3>FORMACIONES</h3>
-        <p>Certificaciones y cursos</p>
-      </div>
-    </div>
-
   </div>
 
-  <div class="scroll">SCROLL</div>
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24">
+        <rect x="7" y="7" width="10" height="10" rx="2"/>
+        <path d="M9 3v4"/>
+        <path d="M15 3v4"/>
+        <path d="M9 17v4"/>
+        <path d="M15 17v4"/>
+        <path d="M3 9h4"/>
+        <path d="M3 15h4"/>
+        <path d="M17 9h4"/>
+        <path d="M17 15h4"/>
+      </svg>
+    </div>
+    <div>
+      <h3>IA Aplicada</h3>
+      <p>Asistentes, workflows y optimización.</p>
+    </div>
+  </div>
 
-</section>
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 17l6-6 4 4 6-8"/>
+        <path d="M15 7h5v5"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Estrategia Comercial</h3>
+      <p>Análisis, oportunidades y crecimiento.</p>
+    </div>
+  </div>
 
-</body>
-</html>
+</div>
