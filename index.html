@@ -165,11 +165,20 @@ body{
   background:radial-gradient(circle, rgba(155,108,255,.25), transparent 62%);
 }
 
-.hero-image img{
+.hero-video-file{
+
   width:100%;
-  max-width:390px;
+  max-width:460px;
+
+  border-radius:24px;
+
   position:relative;
   z-index:2;
+
+  display:block;
+
+  box-shadow:
+  0 25px 80px rgba(0,0,0,.45);
 }
 
 /* ICONOS */
@@ -405,7 +414,9 @@ body{
       <div class="float-icon icon-2">▮</div>
       <div class="float-icon icon-3">◎</div>
 
-      <img src="romina.png" alt="Romina Cárdenas">
+     <video class="hero-video-file" autoplay muted loop playsinline>
+    <source src="Video Project 27.mp4" type="video/mp4">
+</video>
     </div>
 
   </div>
