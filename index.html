@@ -168,7 +168,41 @@ height:28px;
 
   transition:.25s;
 }
+.btn-arrow-down{
+  width:28px;
+  height:28px;
 
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.25s;
+}
+
+.btn-arrow-down svg{
+  width:16px;
+  height:16px;
+
+  stroke:#fff;
+  stroke-width:2.5;
+  fill:none;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+}
+
+.btn-secondary:hover .btn-arrow-down{
+  transform:translateY(3px);
+}
 .btn-arrow svg{
   width:16px;
   height:16px;
@@ -439,9 +473,18 @@ height:28px;
     </svg>
   </span>
 </a>
-        <a href="#" class="btn-secondary">DESCARGAR CV ↓</a>
-      </div>
-    </div>
+       <a href="#" class="btn-secondary">
+
+  DESCARGAR CV
+
+  <span class="btn-arrow-down">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 5v12"/>
+      <path d="M6 13l6 6 6-6"/>
+    </svg>
+  </span>
+
+</a>
 
     <div class="hero-image">
     
