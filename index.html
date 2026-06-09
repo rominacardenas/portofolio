@@ -25,17 +25,18 @@ body{
   min-height:100vh;
   padding:28px 6% 30px;
   position:relative;
-background:
-  radial-gradient(circle at 48% 42%, rgba(123,92,255,.13), transparent 34%),
-  radial-gradient(circle at 18% 95%, rgba(123,92,255,.08), transparent 32%),
-  linear-gradient(
-    90deg,
-    #030303 0%,
-    #050308 48%,
-    #030303 67%,
-    #030303 100%
-  );
+  background:
+    radial-gradient(circle at 48% 42%, rgba(123,92,255,.13), transparent 34%),
+    radial-gradient(circle at 18% 95%, rgba(123,92,255,.08), transparent 32%),
+    linear-gradient(
+      90deg,
+      #030303 0%,
+      #050308 48%,
+      #030303 67%,
+      #030303 100%
+    );
 }
+
 /* NAV */
 
 .nav{
@@ -44,13 +45,13 @@ background:
   display:flex;
   justify-content:flex-end;
   align-items:center;
-  gap:40px;
+  gap:34px;
 }
 
 .nav-links{
   display:flex;
-  gap:42px;
-  justify-content:center;
+  gap:32px;
+  align-items:center;
 }
 
 .nav-links a{
@@ -66,7 +67,6 @@ background:
 }
 
 .btn-contacto{
-  justify-self:end;
   color:#fff;
   text-decoration:none;
   border:1px solid #9b6cff;
@@ -126,6 +126,7 @@ background:
   margin-top:38px;
   display:flex;
   gap:18px;
+  flex-wrap:wrap;
 }
 
 .btn-primary,
@@ -136,88 +137,16 @@ background:
   font-size:15px;
   font-weight:600;
   transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
 }
 
 .btn-primary{
   color:#fff;
-  background:linear-gradient(
-    135deg,
-    #b98aff 0%,
-    #8f67ff 100%
-  );
-
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-}
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
+  background:linear-gradient(135deg, #b98aff 0%, #8f67ff 100%);
 }
 
-.btn-arrow{
-width:28px;
-height:28px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  transition:.25s;
-}
-.btn-arrow-down{
-  width:28px;
-  height:28px;
-
-  border-radius:50%;
-  background:rgba(255,255,255,.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  transition:.25s;
-}
-
-.btn-arrow-down svg{
-  width:16px;
-  height:16px;
-
-  stroke:#fff;
-  stroke-width:2.5;
-  fill:none;
-
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.btn-secondary{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-}
-
-.btn-secondary:hover .btn-arrow-down{
-  transform:translateY(3px);
-}
-.btn-arrow svg{
-  width:16px;
-  height:16px;
-
-  stroke:#fff;
-  stroke-width:2.5;
-  fill:none;
-
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.btn-primary:hover .btn-arrow{
-  transform:translateX(3px);
-}
 .btn-secondary{
   color:#fff;
   border:1px solid #8b63ff;
@@ -228,7 +157,45 @@ height:28px;
   transform:translateY(-3px);
 }
 
-/* IMAGEN */
+.btn-arrow,
+.btn-arrow-down{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.25s;
+}
+
+.btn-arrow{
+  background:rgba(255,255,255,.18);
+}
+
+.btn-arrow-down{
+  background:rgba(255,255,255,.08);
+}
+
+.btn-arrow svg,
+.btn-arrow-down svg{
+  width:16px;
+  height:16px;
+  stroke:#fff;
+  stroke-width:2.5;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.btn-primary:hover .btn-arrow{
+  transform:translateX(3px);
+}
+
+.btn-secondary:hover .btn-arrow-down{
+  transform:translateY(3px);
+}
+
+/* VIDEO */
 
 .hero-image{
   position:relative;
@@ -236,8 +203,6 @@ height:28px;
   align-items:center;
   justify-content:center;
 }
-
-
 
 .hero-video-file{
   width:100%;
@@ -279,7 +244,7 @@ height:28px;
 }
 
 .card-icon{
-
+  min-width:54px;
   width:54px;
   height:54px;
   border-radius:14px;
@@ -288,7 +253,6 @@ height:28px;
   justify-content:center;
   background:rgba(155,108,255,.12);
   color:#b68cff;
-  font-size:28px;
 }
 
 .card-icon svg{
@@ -340,13 +304,8 @@ height:28px;
     justify-content:center;
   }
 
-  .hero-image img{
-    max-width:300px;
-  }
-
-  .orbit{
-    width:360px;
-    height:360px;
+  .hero-video-file{
+    max-width:220px;
   }
 
   .cards{
@@ -365,7 +324,6 @@ height:28px;
 
 @media(max-width:768px){
   .nav{
-    display:flex;
     justify-content:center;
   }
 
@@ -404,19 +362,11 @@ height:28px;
 
   .ctas{
     flex-direction:column;
+    align-items:center;
   }
 
-  .hero-image img{
-    max-width:240px;
-  }
-
-  .orbit{
-    width:280px;
-    height:280px;
-  }
-
-  .float-icon{
-    display:none;
+  .hero-video-file{
+    max-width:200px;
   }
 
   .card{
@@ -431,8 +381,6 @@ height:28px;
 <section class="hero">
 
   <nav class="nav">
-    <div></div>
-
     <div class="nav-links">
       <a href="#">INICIO</a>
       <a href="#">PROYECTOS</a>
@@ -463,90 +411,92 @@ height:28px;
       </p>
 
       <div class="ctas">
-       <a href="#" class="btn-primary">
-  VER PROYECTOS
+        <a href="#" class="btn-primary">
+          VER PROYECTOS
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h12"/>
+              <path d="M13 6l6 6-6 6"/>
+            </svg>
+          </span>
+        </a>
 
-  <span class="btn-arrow">
-    <svg viewBox="0 0 24 24">
-      <path d="M5 12h12"/>
-   <path d="M13 6l6 6-6 6"/>
-    </svg>
-  </span>
-</a>
-       <a href="#" class="btn-secondary">
-
-  DESCARGAR CV
-
-  <span class="btn-arrow-down">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 5v12"/>
-      <path d="M6 13l6 6 6-6"/>
-    </svg>
-  </span>
-
-</a>
+        <a href="#" class="btn-secondary">
+          DESCARGAR CV
+          <span class="btn-arrow-down">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v12"/>
+              <path d="M6 13l6 6 6-6"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
 
     <div class="hero-image">
-    
-
-     <video class="hero-video-file" autoplay muted loop playsinline>
-    <source src="Video Project 27.mp4" type="video/mp4">
-</video>
+      <video class="hero-video-file" autoplay muted loop playsinline>
+        <source src="Video Project 27.mp4" type="video/mp4">
+      </video>
     </div>
 
   </div>
 
+  <div class="cards">
 
-
-   <div class="cards">
-
-  <div class="card">
-    <div class="card-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 19V5"/>
-        <path d="M4 19h16"/>
-        <path d="M8 16v-5"/>
-        <path d="M12 16V8"/>
-        <path d="M16 16v-8"/>
-      </svg>
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 19V5"/>
+          <path d="M4 19h16"/>
+          <path d="M8 16v-5"/>
+          <path d="M12 16V8"/>
+          <path d="M16 16v-8"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Procesos y Operaciones</h3>
+        <p>Pipelines, procesos comerciales y mejora operativa.</p>
+      </div>
     </div>
-    <div>
-      <h3>Procesos y Operaciones</h3>
-      <p>Pipelines, procesos comerciales y mejora operativa.</p>
+
+    <div class="card">
+      <div class="card-icon"> 
+        <svg viewBox="0 0 24 24">
+          <rect x="7" y="7" width="10" height="10" rx="2"/>
+          <path d="M9 3v4"/>
+          <path d="M15 3v4"/>
+          <path d="M9 17v4"/>
+          <path d="M15 17v4"/>
+          <path d="M3 9h4"/>
+          <path d="M3 15h4"/>
+          <path d="M17 9h4"/>
+          <path d="M17 15h4"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Automatización e IA</h3>
+        <p>Workflows, agentes e integraciones inteligentes.</p>
+      </div>
     </div>
+
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 17l6-6 4 4 6-8"/>
+          <path d="M15 7h5v5"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Análisis y Decisiones</h3>
+        <p>Datos, métricas y oportunidades para la toma de decisiones.</p>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card">
-    <div class="card-icon"> 
-      <svg viewBox="0 0 24 24">
-        <rect x="7" y="7" width="10" height="10" rx="2"/>
-        <path d="M9 3v4"/>
-        <path d="M15 3v4"/>
-        <path d="M9 17v4"/>
-        <path d="M15 17v4"/>
-        <path d="M3 9h4"/>
-        <path d="M3 15h4"/>
-        <path d="M17 9h4"/>
-        <path d="M17 15h4"/>
-      </svg>
-    </div>
-    <div>
-      <h3>Automatización e IA</h3>
-      <p>Workflows, agentes e integraciones inteligentes.</p>
-    </div>
-  </div>
+  <div class="scroll">SCROLL</div>
 
-  <div class="card">
-    <div class="card-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 17l6-6 4 4 6-8"/>
-        <path d="M15 7h5v5"/>
-      </svg>
-    </div>
-    <div>
-      <h3>Análisis y Decisiones</h3>
-      <p>Datos, métricas y oportunidades para la toma de decisiones.</p>
-    </div>
-  </div>
+</section>
 
-</div>
+</body>
+</html>
