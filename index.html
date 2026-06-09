@@ -140,9 +140,50 @@ background:
 
 .btn-primary{
   color:#fff;
-  background:linear-gradient(135deg, #b27cff, #7d5cff);
+  background:linear-gradient(
+    135deg,
+    #b98aff 0%,
+    #8f67ff 100%
+  );
+
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+}
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
 }
 
+.btn-arrow{
+width:28px;
+height:28px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.25s;
+}
+
+.btn-arrow svg{
+  width:16px;
+  height:16px;
+
+  stroke:#fff;
+  stroke-width:2.5;
+  fill:none;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.btn-primary:hover .btn-arrow{
+  transform:translateX(3px);
+}
 .btn-secondary{
   color:#fff;
   border:1px solid #8b63ff;
@@ -388,7 +429,16 @@ background:
       </p>
 
       <div class="ctas">
-        <a href="#" class="btn-primary">VER PROYECTOS →</a>
+       <a href="#" class="btn-primary">
+  VER PROYECTOS
+
+  <span class="btn-arrow">
+    <svg viewBox="0 0 24 24">
+      <path d="M5 12h12"/>
+   <path d="M13 6l6 6-6 6"/>
+    </svg>
+  </span>
+</a>
         <a href="#" class="btn-secondary">DESCARGAR CV ↓</a>
       </div>
     </div>
