@@ -156,47 +156,39 @@ body{
   justify-content:center;
 }
 
-.orbit{
+.video-bg-light{
   position:absolute;
-  width:470px;
-  height:470px;
+
+  width:520px;
+  height:520px;
+
   border-radius:50%;
-  border:1px solid rgba(155,108,255,.18);
-  background:radial-gradient(circle, rgba(155,108,255,.25), transparent 62%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139,92,246,.26) 0%,
+      rgba(139,92,246,.14) 38%,
+      transparent 72%
+    );
+
+  filter:blur(45px);
+
+  z-index:1;
 }
 
 .hero-video-file{
   width:100%;
-  max-width:310px;
-  max-height:430px;
+  max-width:280px;
+  max-height:390px;
   object-fit:cover;
   object-position:center;
-  border-radius:24px;
+  border-radius:22px;
   position:relative;
   z-index:2;
   display:block;
-  box-shadow:0 25px 80px rgba(0,0,0,.45);
+  box-shadow:0 18px 60px rgba(0,0,0,.55);
 }
-/* ICONOS */
-
-.float-icon{
-  position:absolute;
-  width:72px;
-  height:72px;
-  border:1px solid rgba(155,108,255,.30);
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#9b6cff;
-  font-size:34px;
-  background:rgba(255,255,255,.03);
-  z-index:3;
-}
-
-.icon-1{ left:5%; top:48%; }
-.icon-2{ right:5%; top:18%; }
-.icon-3{ right:6%; bottom:20%; }
 
 /* CARDS */
 
@@ -404,11 +396,7 @@ body{
     </div>
 
     <div class="hero-image">
-      <div class="orbit"></div>
-
-      <div class="float-icon icon-1">⌁</div>
-      <div class="float-icon icon-2">▮</div>
-      <div class="float-icon icon-3">◎</div>
+    <div class="video-bg-light"></div>
 
      <video class="hero-video-file" autoplay muted loop playsinline>
     <source src="Video Project 27.mp4" type="video/mp4">
