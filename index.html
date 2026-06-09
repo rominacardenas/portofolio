@@ -25,10 +25,11 @@ body{
   min-height:100vh;
   padding:28px 6% 30px;
   position:relative;
-  background:
-    radial-gradient(circle at 75% 45%, rgba(123,92,255,.20), transparent 34%),
-    radial-gradient(circle at 50% 100%, rgba(123,92,255,.10), transparent 30%),
-    #030303;
+background:
+  radial-gradient(circle at 70% 40%, rgba(123,92,255,.16), transparent 42%),
+  radial-gradient(circle at 92% 15%, rgba(123,92,255,.10), transparent 25%),
+  radial-gradient(circle at 20% 100%, rgba(123,92,255,.06), transparent 35%),
+  #030303;
 }
 
 /* NAV */
@@ -156,30 +157,11 @@ body{
   justify-content:center;
 }
 
-.video-bg-light{
-  position:absolute;
 
-  width:520px;
-  height:520px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(139,92,246,.26) 0%,
-      rgba(139,92,246,.14) 38%,
-      transparent 72%
-    );
-
-  filter:blur(45px);
-
-  z-index:1;
-}
 
 .hero-video-file{
   width:100%;
-  max-width:280px;
+  max-width:230px;
   max-height:390px;
   object-fit:cover;
   object-position:center;
@@ -396,7 +378,7 @@ body{
     </div>
 
     <div class="hero-image">
-    <div class="video-bg-light"></div>
+    
 
      <video class="hero-video-file" autoplay muted loop playsinline>
     <source src="Video Project 27.mp4" type="video/mp4">
