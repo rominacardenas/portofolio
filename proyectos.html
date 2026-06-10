@@ -225,17 +225,18 @@ body{
 }
 
 .proyecto-info h2{
-  font-size:30px;
-  line-height:1.12;
-  letter-spacing:-.5px;
+  font-size:25px;
+  line-height:1.14;
+  letter-spacing:-.4px;
   margin-bottom:16px;
+  max-width:620px;
 }
 
 .proyecto-info p{
   color:#d7d7d7;
   font-size:16px;
   line-height:1.6;
-  max-width:560px;
+  max-width:620px;
 }
 
 .tags{
@@ -252,6 +253,16 @@ body{
   border-radius:9px;
   background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.08);
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.tag img{
+  width:15px;
+  height:15px;
+  display:block;
 }
 
 .card-actions{
@@ -370,17 +381,28 @@ body{
       <div class="proyecto-info">
         <div class="categoria">Automatización</div>
 
-        <h2> Automatización de detección de Feedback Crítico </h2>
+        <h2> Automatización de detección de Feedback crítico </h2>
 
         <p>
         Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual
         </p>
 
-        <div class="tags">
-          <span class="tag">n8n</span>
-          <span class="tag">OpenAI</span>
-          <span class="tag">Google Sheets</span>
-        </div>
+      <div class="tags">
+  <span class="tag">
+    <img src="https://cdn.simpleicons.org/n8n/ffffff" alt="">
+    n8n
+  </span>
+
+  <span class="tag">
+    <img src="https://cdn.simpleicons.org/openai/ffffff" alt="">
+    OpenAI
+  </span>
+
+  <span class="tag">
+    <img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="">
+    Google Sheets
+  </span>
+</div>
 
         <div class="card-actions">
           <a href="#" class="card-btn">Ver caso →</a>
