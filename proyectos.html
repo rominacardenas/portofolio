@@ -2,11 +2,469 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Proyectos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos · Romina Cárdenas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:#030712;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.proyectos-page{
+  min-height:100vh;
+  padding:28px 6% 70px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(124,58,237,.34), transparent 34%),
+    radial-gradient(circle at 75% 35%, rgba(167,16,118,.14), transparent 34%),
+    linear-gradient(135deg, #030712 0%, #080411 45%, #030712 100%);
+}
+
+/* NAV */
+.nav{
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:34px;
+}
+
+.nav-links{
+  display:flex;
+  gap:32px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#b98aff;
+}
+
+.btn-contacto{
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #9b6cff;
+  border-radius:16px;
+  padding:12px 26px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* HEADER */
+.proyectos-header{
+  max-width:1280px;
+  margin:80px auto 46px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid rgba(185,138,255,.26);
+  background:rgba(185,138,255,.08);
+  color:#c9a7ff;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  margin-bottom:24px;
+}
+
+.proyectos-header h1{
+  max-width:720px;
+  font-size:clamp(44px, 5vw, 72px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.proyectos-header h1 span{
+  background:linear-gradient(90deg, #8b5cf6, #c084fc, #a71076);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.proyectos-header p{
+  max-width:650px;
+  margin-top:22px;
+  font-size:18px;
+  line-height:1.65;
+  color:#d8d8d8;
+}
+
+/* FILTROS */
+.filtros{
+  max-width:1280px;
+  margin:0 auto 24px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.filtro{
+  padding:11px 20px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* CARDS */
+.proyectos-lista{
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.proyecto-card{
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:34px;
+  padding:24px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+  backdrop-filter:blur(14px);
+  box-shadow:0 24px 70px rgba(0,0,0,.30);
+  transition:.3s ease;
+}
+
+.proyecto-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(185,138,255,.34);
+  box-shadow:0 28px 90px rgba(124,58,237,.18);
+}
+
+.proyecto-visual{
+  min-height:210px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(124,58,237,.18), transparent 55%),
+    #080b16;
+  background-size:28px 28px, 28px 28px, auto, auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.workflow{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.node{
+  width:62px;
+  height:62px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.arrow{
+  width:44px;
+  height:1px;
+  background:rgba(255,255,255,.55);
+  position:relative;
+}
+
+.arrow:after{
+  content:"";
+  position:absolute;
+  right:-1px;
+  top:-4px;
+  border-left:7px solid rgba(255,255,255,.65);
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+}
+
+.proyecto-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.categoria{
+  color:#b98aff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.proyecto-info h2{
+  font-size:30px;
+  line-height:1.12;
+  letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+
+.proyecto-info p{
+  color:#d7d7d7;
+  font-size:16px;
+  line-height:1.6;
+  max-width:560px;
+}
+
+.tags{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.tag{
+  font-size:12px;
+  color:#fff;
+  padding:7px 11px;
+  border-radius:9px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.card-actions{
+  margin-top:24px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.card-btn{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  border-radius:13px;
+  padding:12px 18px;
+  border:1px solid rgba(185,138,255,.45);
+  background:rgba(185,138,255,.08);
+  transition:.25s;
+}
+
+.card-btn:hover{
+  background:linear-gradient(135deg, #461861, #6d28d9, #a71076);
+}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .proyecto-card{
+    grid-template-columns:1fr;
+  }
+
+  .proyecto-visual{
+    min-height:190px;
+  }
+}
+
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+  }
+
+  .btn-contacto{
+    display:none;
+  }
+
+  .proyectos-header{
+    margin-top:54px;
+  }
+
+  .proyecto-card{
+    padding:18px;
+  }
+
+  .workflow{
+    transform:scale(.82);
+  }
+
+  .proyecto-info h2{
+    font-size:24px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<h1>Mis proyectos</h1>
+<section class="proyectos-page">
+
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="index.html">INICIO</a>
+      <a href="proyectos.html" class="active">PROYECTOS</a>
+      <a href="#">HERRAMIENTAS</a>
+      <a href="#">FORMACIONES</a>
+      <a href="#">SOBRE MÍ</a>
+    </div>
+
+    <a href="#" class="btn-contacto">CONTACTO</a>
+  </nav>
+
+  <header class="proyectos-header">
+    <div class="badge">PORTFOLIO · PROYECTOS SELECCIONADOS</div>
+
+    <h1>
+      Casos reales de automatización, IA y <span>Marketing Ops.</span>
+    </h1>
+
+    <p>
+      Una selección de proyectos desarrollados para optimizar procesos, ordenar información,
+      automatizar tareas y facilitar la toma de decisiones.
+    </p>
+  </header>
+
+  <div class="filtros">
+    <button class="filtro">Todos</button>
+    <button class="filtro">Automatización</button>
+    <button class="filtro">IA Aplicada</button>
+    <button class="filtro">Marketing Ops</button>
+    <button class="filtro">Análisis</button>
+  </div>
+
+  <main class="proyectos-lista">
+
+    <!-- PROYECTO 1 -->
+    <article class="proyecto-card">
+      <div class="proyecto-visual">
+        <div class="workflow">
+          <div class="node">🟢</div>
+          <div class="arrow"></div>
+          <div class="node">🤖</div>
+          <div class="arrow"></div>
+          <div class="node">📊</div>
+        </div>
+      </div>
+
+      <div class="proyecto-info">
+        <div class="categoria">Automatización</div>
+
+        <h2>Automatización de Leads con IA</h2>
+
+        <p>
+          Workflow que analiza mensajes entrantes, califica prospectos y los deriva
+          automáticamente al equipo comercial.
+        </p>
+
+        <div class="tags">
+          <span class="tag">n8n</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">Google Sheets</span>
+        </div>
+
+        <div class="card-actions">
+          <a href="#" class="card-btn">Ver caso →</a>
+          <a href="#" class="card-btn">Workflow</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 2 -->
+    <article class="proyecto-card">
+      <div class="proyecto-visual">
+        <div class="workflow">
+          <div class="node">📩</div>
+          <div class="arrow"></div>
+          <div class="node">⚡</div>
+          <div class="arrow"></div>
+          <div class="node">✅</div>
+        </div>
+      </div>
+
+      <div class="proyecto-info">
+        <div class="categoria">Automatización</div>
+
+        <h2>Automatización de proceso de pagos y asignación de ofertas educativas</h2>
+
+        <p>
+          Workflow en GoHighLevel con integración de Mercado Pago que procesa pagos online
+          y asistidos, aplica cupones de descuento, asigna automáticamente ofertas educativas
+          en el aula virtual y actualiza el pipeline comercial.
+        </p>
+
+        <div class="tags">
+          <span class="tag">GoHighLevel</span>
+          <span class="tag">Mercado Pago</span>
+          <span class="tag">Workflows</span>
+        </div>
+
+        <div class="card-actions">
+          <a href="#" class="card-btn">Ver caso →</a>
+          <a href="#" class="card-btn">Workflow</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 3 -->
+    <article class="proyecto-card">
+      <div class="proyecto-visual">
+        <div class="workflow">
+          <div class="node">💬</div>
+          <div class="arrow"></div>
+          <div class="node">🧠</div>
+          <div class="arrow"></div>
+          <div class="node">📌</div>
+        </div>
+      </div>
+
+      <div class="proyecto-info">
+        <div class="categoria">IA Aplicada</div>
+
+        <h2>Asistente interactivo de onboarding con IA</h2>
+
+        <p>
+          Prototipo funcional desarrollado en Voiceflow que guía a nuevos colaboradores
+          en su onboarding mediante lenguaje conversacional, validación por DNI y acceso
+          a recursos internos.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Voiceflow</span>
+          <span class="tag">IA Conversacional</span>
+          <span class="tag">Onboarding</span>
+        </div>
+
+        <div class="card-actions">
+          <a href="#" class="card-btn">Ver caso →</a>
+          <a href="#" class="card-btn">Readme</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+</section>
 
 </body>
 </html>
