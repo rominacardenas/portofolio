@@ -179,10 +179,29 @@ body{
 .workflow-preview{
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
   object-position:center;
   display:block;
-  padding:10px;
+  .zoomable{
+  position:relative;
+}
+
+.zoom-icon{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  font-size:18px;
+  backdrop-filter:blur(8px);
+}
 }
 .workflow{
   display:flex;
@@ -384,12 +403,14 @@ body{
   <main class="proyectos-lista">
 
     <!-- PROYECTO 1 -->
-<div class="proyecto-visual">
+<div class="proyecto-visual zoomable">
   <img
     src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
     alt="Workflow comentario vacío"
     class="workflow-preview"
   >
+
+  <span class="zoom-icon">⌕</span>
 </div>
       <div class="proyecto-info">
         <div class="categoria">Automatización</div>
