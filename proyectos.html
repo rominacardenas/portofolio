@@ -172,7 +172,13 @@ body{
   justify-content:center;
   overflow:hidden;
 }
-
+.workflow-preview{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+}
 .workflow{
   display:flex;
   align-items:center;
@@ -373,17 +379,13 @@ body{
   <main class="proyectos-lista">
 
     <!-- PROYECTO 1 -->
-    <article class="proyecto-card">
-      <div class="proyecto-visual">
-        <div class="workflow">
-          <div class="node">🟢</div>
-          <div class="arrow"></div>
-          <div class="node">🤖</div>
-          <div class="arrow"></div>
-          <div class="node">📊</div>
-        </div>
-      </div>
-
+<div class="proyecto-visual">
+  <img
+    src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
+    alt="Workflow comentario vacío"
+    class="workflow-preview"
+  >
+</div>
       <div class="proyecto-info">
         <div class="categoria">Automatización</div>
 
