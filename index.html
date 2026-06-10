@@ -25,33 +25,33 @@ body{
   min-height:100vh;
   padding:28px 6% 30px;
   position:relative;
-  background:
-   .hero{
-  min-height:100vh;
-  padding:28px 6% 30px;
-  position:relative;
 
   background:
+    radial-gradient(
+      circle at 35% 20%,
+      rgba(139,92,246,.22),
+      transparent 35%
+    ),
 
-  radial-gradient(
-    circle at 35% 20%,
-    rgba(139,92,246,.22),
-    transparent 35%
-  ),
+    radial-gradient(
+      circle at 30% 75%,
+      rgba(124,58,237,.12),
+      transparent 40%
+    ),
 
-  radial-gradient(
-    circle at 30% 75%,
-    rgba(124,58,237,.12),
-    transparent 40%
-  ),
+    radial-gradient(
+      circle at 55% 45%,
+      rgba(168,85,247,.08),
+      transparent 30%
+    ),
 
-  radial-gradient(
-    circle at 55% 45%,
-    rgba(168,85,247,.08),
-    transparent 30%
-  ),
-
-  #030303;
+    linear-gradient(
+      90deg,
+      #030303 0%,
+      #050308 48%,
+      #030303 68%,
+      #030303 100%
+    );
 }
 /* NAV */
 
@@ -79,19 +79,26 @@ body{
 }
 
 .nav-links a:hover{
+  color:#9b6cff;
+}
 .subtitulo{
-
   margin-top:24px;
-
   font-size:20px;
-
   font-weight:700;
 
-  color:#b68cff;
+  background:linear-gradient(
+    90deg,
+    #7d5cff,
+    #b68cff,
+    #ff8be7
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
 
   text-shadow:
-    0 0 12px rgba(182,140,255,.45),
-    0 0 30px rgba(139,92,246,.25);
+    0 0 25px rgba(139,92,246,.25);
 }
 
 .btn-contacto{
@@ -139,7 +146,20 @@ body{
   margin-top:24px;
   font-size:20px;
   font-weight:700;
-  color:#9b6cff;
+
+  background:linear-gradient(
+    90deg,
+    #7d5cff,
+    #b68cff,
+    #ff8be7
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+
+  text-shadow:
+    0 0 25px rgba(139,92,246,.25);
 }
 
 .descripcion{
