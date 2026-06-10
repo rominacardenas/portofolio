@@ -133,14 +133,23 @@ body{
   color:#fff;
 }
 
+
 .nombre{
   font-size:clamp(58px, 6vw, 88px);
   line-height:.92;
-  font-weight:900;
-  letter-spacing:-3px;
-  color:#fff;
-}
+  font-weight:800;
+  letter-spacing:-2px;
 
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,1),
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.75)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 .subtitulo{
   margin-top:24px;
   font-size:20px;
