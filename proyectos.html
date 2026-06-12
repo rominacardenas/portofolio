@@ -188,21 +188,49 @@ body{
   position:absolute;
   right:14px;
   bottom:14px;
-  width:42px;
-  height:42px;
+
+  width:46px;
+  height:46px;
+
   border-radius:50%;
-  background:rgba(0,0,0,.65);
-  border:1px solid rgba(255,255,255,.20);
+
+  background:rgba(0,0,0,.75);
+  border:1px solid rgba(255,255,255,.25);
+
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-  font-size:20px;
-  backdrop-filter:blur(10px);
-  opacity:0;
-  transition:.3s;
-}
 
+  color:#fff;
+  font-size:22px;
+
+  backdrop-filter:blur(12px);
+
+  opacity:1;
+
+  box-shadow:
+    0 0 0 0 rgba(185,138,255,.55);
+
+  animation:zoomPulse 2s infinite;
+}
+@keyframes zoomPulse{
+
+  0%{
+    transform:scale(1);
+    box-shadow:0 0 0 0 rgba(185,138,255,.45);
+  }
+
+  70%{
+    transform:scale(1.08);
+    box-shadow:0 0 0 12px rgba(185,138,255,0);
+  }
+
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 0 0 rgba(185,138,255,0);
+  }
+
+}
 .zoomable:hover .zoom-icon{
   opacity:1;
 }
@@ -447,13 +475,18 @@ body{
 <article class="proyecto-card">
 
   <div class="proyecto-visual zoomable" onclick="openZoom(this)">
-    <img
-      src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
-      alt="Workflow comentario vacío"
-      class="workflow-preview"
-    >
-    <span class="zoom-icon">🔍</span>
+  <img
+    src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
+    alt="Workflow comentario vacío"
+    class="workflow-preview"
+  >
+
+  <div class="zoom-badge">
+    CLICK PARA AMPLIAR
   </div>
+
+  <span class="zoom-icon">🔍</span>
+</div>
 
   <div class="proyecto-info">
     <div class="categoria">Automatización</div>
