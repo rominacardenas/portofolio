@@ -593,21 +593,74 @@ body{
   </main>
 
 </section>
-<div class="zoom-modal" id="zoomModal" onclick="closeZoom()">
+<div class="zoom-modal" id="zoomModal">
   <button class="zoom-close" onclick="closeZoom()">×</button>
-  <img id="zoomImage" src="" alt="">
+
+  <button class="zoom-arrow zoom-prev" onclick="prevZoomImage()">‹</button>
+
+  <div class="zoom-content">
+    <img id="zoomImage" src="" alt="">
+    <div class="zoom-caption" id="zoomCaption"></div>
+  </div>
+
+  <button class="zoom-arrow zoom-next" onclick="nextZoomImage()">›</button>
 </div>
 
 <script>
+<script>
+const projectImages = [
+  {
+    src: "Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png",
+    caption: "Workflow principal"
+  },
+  {
+    src: "Automatización de detección de Feedback crítico/Executions - Con Alerta.png",
+    caption: "Ejecución con alerta"
+  },
+  {
+    src: "Automatización de detección de Feedback crítico/mailing con cc.png",
+    caption: "Mailing con copia"
+  },
+  {
+    src: "Automatización de detección de Feedback crítico/Mailing sin CC.png",
+    caption: "Mailing sin copia"
+  }
+];
+
+let currentZoomIndex = 0;
+
 function openZoom(element){
   const img = element.querySelector('img');
-  const modal = document.getElementById('zoomModal');
+  const clickedSrc = img.getAttribute('src');
+
+  currentZoomIndex = projectImages.findIndex(item => item.src === clickedSrc);
+
+  if(currentZoomIndex === -1){
+    currentZoomIndex = 0;
+  }
+
+  updateZoomImage();
+  document.getElementById('zoomModal').classList.add('active');
+}
+
+function updateZoomImage(){
   const zoomImage = document.getElementById('zoomImage');
+  const zoomCaption = document.getElementById('zoomCaption');
 
-  zoomImage.src = img.src;
-  zoomImage.alt = img.alt;
+  zoomImage.src = projectImages[currentZoomIndex].src;
+  zoomImage.alt = projectImages[currentZoomIndex].caption;
+  zoomCaption.textContent =
+    (currentZoomIndex + 1) + " / " + projectImages.length + " · " + projectImages[currentZoomIndex].caption;
+}
 
-  modal.classList.add('active');
+function nextZoomImage(){
+  currentZoomIndex = (currentZoomIndex + 1) % projectImages.length;
+  updateZoomImage();
+}
+
+function prevZoomImage(){
+  currentZoomIndex = (currentZoomIndex - 1 + projectImages.length) % projectImages.length;
+  updateZoomImage();
 }
 
 function closeZoom(){
