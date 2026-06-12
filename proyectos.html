@@ -158,7 +158,9 @@ body{
 }
 
 .proyecto-visual{
+  position:relative;
   min-height:210px;
+  height:210px;
   border-radius:16px;
   border:1px solid rgba(255,255,255,.10);
   background:
@@ -171,11 +173,9 @@ body{
   align-items:center;
   justify-content:center;
   overflow:hidden;
-    height:210px;
-  max-height:210px;
-  overflow:hidden;
   cursor:zoom-in;
 }
+
 .workflow-preview{
   width:100%;
   height:100%;
@@ -186,19 +186,25 @@ body{
 }
 .zoom-icon{
   position:absolute;
-  top:14px;
   right:14px;
-  width:34px;
-  height:34px;
+  bottom:14px;
+  width:42px;
+  height:42px;
   border-radius:50%;
+  background:rgba(0,0,0,.65);
+  border:1px solid rgba(255,255,255,.20);
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,.55);
-  border:1px solid rgba(255,255,255,.18);
   color:#fff;
-  font-size:18px;
-  backdrop-filter:blur(8px);
+  font-size:20px;
+  backdrop-filter:blur(10px);
+  opacity:0;
+  transition:.3s;
+}
+
+.zoomable:hover .zoom-icon{
+  opacity:1;
 }
 }
 .workflow{
