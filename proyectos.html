@@ -364,6 +364,42 @@ body{
     font-size:24px;
   }
 }
+.zoom-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(3,7,18,.92);
+  backdrop-filter:blur(12px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+  padding:32px;
+}
+
+.zoom-modal.active{
+  display:flex;
+}
+
+.zoom-modal img{
+  max-width:92vw;
+  max-height:88vh;
+  border-radius:16px;
+  box-shadow:0 30px 100px rgba(0,0,0,.70);
+}
+
+.zoom-close{
+  position:absolute;
+  top:26px;
+  right:30px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
 </style>
 </head>
 
@@ -530,6 +566,26 @@ body{
   </main>
 
 </section>
+<div class="zoom-modal" id="zoomModal" onclick="closeZoom()">
+  <button class="zoom-close" onclick="closeZoom()">×</button>
+  <img id="zoomImage" src="" alt="">
+</div>
 
+<script>
+function openZoom(element){
+  const img = element.querySelector('img');
+  const modal = document.getElementById('zoomModal');
+  const zoomImage = document.getElementById('zoomImage');
+
+  zoomImage.src = img.src;
+  zoomImage.alt = img.alt;
+
+  modal.classList.add('active');
+}
+
+function closeZoom(){
+  document.getElementById('zoomModal').classList.remove('active');
+}
+</script>
 </body>
 </html>
