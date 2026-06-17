@@ -252,17 +252,21 @@ body{
 }
 .zoom-close:hover{background:rgba(185,138,255,.25);}
 
+.zoom-wrapper{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
 .zoom-arrow{
-  position:absolute;
-  top:50%;transform:translateY(-50%);
-  width:60px;height:60px;border-radius:50%;
+  width:52px;height:52px;border-radius:50%;
   border:2px solid rgba(185,138,255,.7);
   background:rgba(124,58,237,.6);
-  color:#fff;font-size:36px;cursor:pointer;
+  color:#fff;font-size:32px;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   transition:.2s;user-select:none;
-  backdrop-filter:blur(8px);
+  flex-shrink:0;
 }
+.zoom-arrow:hover{background:rgba(124,58,237,.9);border-color:#9b6cff;}
 .zoom-arrow:hover{background:rgba(124,58,237,.45);border-color:#9b6cff;}
 .zoom-prev{left:-30px;}
 .zoom-next{right:-30px;}
@@ -428,14 +432,15 @@ body{
 <!-- LIGHTBOX -->
 <div class="zoom-modal" id="zoomModal">
   <button class="zoom-close" onclick="closeZoom()">×</button>
-  <button class="zoom-arrow zoom-prev" onclick="changeImage(-1)">‹</button>
-  <div class="zoom-content">
-    <img id="zoomImage" src="" alt="">
-    <div class="zoom-caption" id="zoomCaption"></div>
+  <div class="zoom-wrapper">
+    <button class="zoom-arrow zoom-prev" onclick="changeImage(-1)">‹</button>
+    <div class="zoom-content">
+      <img id="zoomImage" src="" alt="">
+      <div class="zoom-caption" id="zoomCaption"></div>
+    </div>
+    <button class="zoom-arrow zoom-next" onclick="changeImage(1)">›</button>
   </div>
-  <button class="zoom-arrow zoom-next" onclick="changeImage(1)">›</button>
 </div>
-
 <script>
 let currentImages = [];
 let currentIndex  = 0;
