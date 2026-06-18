@@ -8,349 +8,66 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Inter',sans-serif;
-  background:#030712;
-  color:#fff;
-  overflow-x:hidden;
-}
-
-.proyectos-page{
-  min-height:100vh;
-  padding:28px 6% 70px;
-  background:
-    radial-gradient(circle at 20% 18%, rgba(124,58,237,.34), transparent 34%),
-    radial-gradient(circle at 75% 35%, rgba(167,16,118,.14), transparent 34%),
-    linear-gradient(135deg, #030712 0%, #080411 45%, #030712 100%);
-}
-
-.nav{
-  max-width:1280px;
-  margin:0 auto;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:34px;
-}
+body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hidden;}
+.proyectos-page{min-height:100vh;padding:28px 6% 70px;background:radial-gradient(circle at 20% 18%, rgba(124,58,237,.34), transparent 34%),radial-gradient(circle at 75% 35%, rgba(167,16,118,.14), transparent 34%),linear-gradient(135deg, #030712 0%, #080411 45%, #030712 100%);}
+.nav{max-width:1280px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;gap:34px;}
 .nav-links{display:flex;gap:32px;align-items:center;}
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-  font-weight:600;
-  transition:.3s;
-}
-.nav-links a:hover,
-.nav-links a.active{color:#b98aff;}
-
-.btn-contacto{
-  color:#fff;
-  text-decoration:none;
-  border:1px solid #9b6cff;
-  border-radius:16px;
-  padding:12px 26px;
-  font-size:13px;
-  font-weight:600;
-}
-
+.nav-links a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:.3s;}
+.nav-links a:hover,.nav-links a.active{color:#b98aff;}
+.btn-contacto{color:#fff;text-decoration:none;border:1px solid #9b6cff;border-radius:16px;padding:12px 26px;font-size:13px;font-weight:600;}
 .proyectos-header{max-width:1280px;margin:80px auto 46px;}
-
-.badge{
-  display:inline-flex;
-  padding:8px 16px;
-  border-radius:999px;
-  border:1px solid rgba(185,138,255,.26);
-  background:rgba(185,138,255,.08);
-  color:#c9a7ff;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.04em;
-  margin-bottom:24px;
-}
-
-.proyectos-header h1{
-  max-width:720px;
-  font-size:clamp(36px,4vw,56px);
-  line-height:1;
-  font-weight:900;
-  letter-spacing:-1px;
-}
-.proyectos-header h1 span{
-  background:linear-gradient(90deg,#8b5cf6,#c084fc,#a71076);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.proyectos-header p{
-  max-width:650px;
-  margin-top:22px;
-  font-size:18px;
-  line-height:1.65;
-  color:#d8d8d8;
-}
-
-.filtros{
-  max-width:1280px;
-  margin:0 auto 24px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.filtro{
-  padding:11px 20px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.03);
-  color:#fff;
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.2s;
-}
+.badge{display:inline-flex;padding:8px 16px;border-radius:999px;border:1px solid rgba(185,138,255,.26);background:rgba(185,138,255,.08);color:#c9a7ff;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:24px;}
+.proyectos-header h1{max-width:720px;font-size:clamp(36px,4vw,56px);line-height:1;font-weight:900;letter-spacing:-1px;}
+.proyectos-header h1 span{background:linear-gradient(90deg,#8b5cf6,#c084fc,#a71076);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.proyectos-header p{max-width:650px;margin-top:22px;font-size:18px;line-height:1.65;color:#d8d8d8;}
+.filtros{max-width:1280px;margin:0 auto 24px;display:flex;gap:12px;flex-wrap:wrap;}
+.filtro{padding:11px 20px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;}
 .filtro:hover{border-color:rgba(185,138,255,.4);background:rgba(185,138,255,.08);}
 .filtro.active{border-color:#9b6cff;background:rgba(155,108,255,.15);color:#c9a7ff;}
-
-.proyectos-lista{
-  max-width:1280px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.proyecto-card{
-  display:grid;
-  grid-template-columns:420px 1fr;
-  gap:34px;
-  padding:24px;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.10);
-  background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
-  backdrop-filter:blur(14px);
-  box-shadow:0 24px 70px rgba(0,0,0,.30);
-  transition:.3s ease;
-}
-.proyecto-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(185,138,255,.34);
-  box-shadow:0 28px 90px rgba(124,58,237,.18);
-}
-
-.proyecto-visual{
-  position:relative;
-  height:210px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.10);
-  background:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
-    radial-gradient(circle at 50% 50%,rgba(124,58,237,.18),transparent 55%),
-    #080b16;
-  background-size:28px 28px,28px 28px,auto,auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
+.proyectos-lista{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
+.proyecto-card{display:grid;grid-template-columns:420px 1fr;gap:34px;padding:24px;border-radius:22px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018));backdrop-filter:blur(14px);box-shadow:0 24px 70px rgba(0,0,0,.30);transition:.3s ease;}
+.proyecto-card:hover{transform:translateY(-4px);border-color:rgba(185,138,255,.34);box-shadow:0 28px 90px rgba(124,58,237,.18);}
+.proyecto-visual{position:relative;height:210px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(circle at 50% 50%,rgba(124,58,237,.18),transparent 55%),#080b16;background-size:28px 28px,28px 28px,auto,auto;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .proyecto-visual.zoomable{cursor:zoom-in;}
-
-.workflow-preview{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-  display:block;
-  border-radius:12px;
-  position:relative;
-}
-
-.zoom-icon{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:rgba(8,11,22,.88);
-  border:1.5px solid rgba(185,138,255,.5);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:20px;
-  backdrop-filter:blur(12px);
-  pointer-events:none;
-  animation:zoomPulse 2.2s ease-in-out infinite;
-}
-@keyframes zoomPulse{
-  0%{transform:scale(1);box-shadow:0 0 0 0 rgba(185,138,255,.45);}
-  70%{transform:scale(1.08);box-shadow:0 0 0 10px rgba(185,138,255,0);}
-  100%{transform:scale(1);box-shadow:0 0 0 0 rgba(185,138,255,0);}
-}
-
+.workflow-preview{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border-radius:12px;}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(8,11,22,.88);border:1.5px solid rgba(185,138,255,.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;backdrop-filter:blur(12px);pointer-events:none;animation:zoomPulse 2.2s ease-in-out infinite;}
+@keyframes zoomPulse{0%{transform:translate(-50%,-50%) scale(1);box-shadow:0 0 0 0 rgba(185,138,255,.45);}70%{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 0 10px rgba(185,138,255,0);}100%{transform:translate(-50%,-50%) scale(1);box-shadow:0 0 0 0 rgba(185,138,255,0);}}
 .workflow{display:flex;align-items:center;gap:18px;}
-.node{
-  width:62px;height:62px;border-radius:14px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.06);
-  display:flex;align-items:center;justify-content:center;
-  font-size:24px;box-shadow:0 12px 30px rgba(0,0,0,.35);
-}
+.node{width:62px;height:62px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 12px 30px rgba(0,0,0,.35);}
 .arrow{width:44px;height:1px;background:rgba(255,255,255,.55);position:relative;}
-.arrow:after{
-  content:"";position:absolute;right:-1px;top:-4px;
-  border-left:7px solid rgba(255,255,255,.65);
-  border-top:4px solid transparent;
-  border-bottom:4px solid transparent;
-}
-
+.arrow:after{content:"";position:absolute;right:-1px;top:-4px;border-left:7px solid rgba(255,255,255,.65);border-top:4px solid transparent;border-bottom:4px solid transparent;}
 .proyecto-info{display:flex;flex-direction:column;justify-content:center;}
-.categoria{
-  color:#b98aff;font-size:12px;font-weight:800;
-  letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;
-}
+.categoria{color:#b98aff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
 .proyecto-info h2{font-size:25px;line-height:1.14;letter-spacing:-.4px;margin-bottom:16px;max-width:620px;}
 .proyecto-info p{color:#d7d7d7;font-size:16px;line-height:1.6;max-width:620px;}
-
-.tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px;}
-.tag{
-  font-size:12px;color:#fff;padding:7px 11px;border-radius:9px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);
-  display:flex;align-items:center;gap:8px;
-}
+.tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:8px;}
+.tag{font-size:12px;color:#fff;padding:7px 11px;border-radius:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:8px;}
 .tag img{width:16px;height:16px;display:block;flex-shrink:0;}
-
 .card-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
-.card-btn{
-  color:#fff;text-decoration:none;font-size:13px;font-weight:700;
-  border-radius:13px;padding:12px 18px;
-  border:1px solid rgba(185,138,255,.45);
-  background:rgba(185,138,255,.08);transition:.25s;cursor:pointer;
-}
+.card-btn{color:#fff;text-decoration:none;font-size:13px;font-weight:700;border-radius:13px;padding:12px 18px;border:1px solid rgba(185,138,255,.45);background:rgba(185,138,255,.08);transition:.25s;cursor:pointer;}
 .card-btn:hover{background:linear-gradient(135deg,#461861,#6d28d9,#a71076);}
-.card-btn--primary{
-  background:linear-gradient(135deg,#6d28d9,#9b6cff);
-  border-color:#9b6cff;
-  font-family:inherit;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.04em;
-  padding:9px 16px;
-  align-self:flex-start;
-}
-.card-btn--primary:hover{
-  background:linear-gradient(135deg,#461861,#6d28d9,#a71076);
-  box-shadow:0 0 18px rgba(155,108,255,.35);
-}
-/* LIGHTBOX */
-.zoom-modal{
-  position:fixed;inset:0;
-  background:rgba(3,7,18,.93);
-  backdrop-filter:blur(16px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-  padding:24px;
-}
+.card-btn--primary{background:linear-gradient(135deg,#6d28d9,#9b6cff);border-color:#9b6cff;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;padding:9px 16px;align-self:flex-start;margin-top:16px;color:#fff;text-decoration:none;border-radius:13px;border:1px solid #9b6cff;cursor:pointer;transition:.25s;}
+.card-btn--primary:hover{background:linear-gradient(135deg,#461861,#6d28d9,#a71076);box-shadow:0 0 18px rgba(155,108,255,.35);}
+.zoom-modal{position:fixed;inset:0;background:rgba(3,7,18,.93);backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px;}
 .zoom-modal.active{display:flex;}
-
-.zoom-close{
-  position:absolute;top:22px;right:26px;
-  width:42px;height:42px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.10);
-  color:#fff;font-size:26px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:.2s;
-}
+.zoom-close{position:absolute;top:22px;right:26px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;}
 .zoom-close:hover{background:rgba(185,138,255,.25);}
-
-.zoom-wrapper{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-.zoom-arrow{
-  width:52px;height:52px;border-radius:50%;
-  border:2px solid rgba(185,138,255,.7);
-  background:rgba(124,58,237,.6);
-  color:#fff;font-size:32px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:.2s;user-select:none;
-  flex-shrink:0;
-}
-.zoom-arrow:hover{background:rgba(124,58,237,.9);border-color:#9b6cff;}
+.zoom-wrapper{display:flex;align-items:center;gap:16px;}
+.zoom-arrow{width:52px;height:52px;border-radius:50%;border:2px solid rgba(185,138,255,.7);background:rgba(124,58,237,.6);color:#fff;font-size:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;user-select:none;flex-shrink:0;}
 .zoom-arrow:hover{background:rgba(124,58,237,.45);border-color:#9b6cff;}
-.zoom-prev{left:-30px;}
-.zoom-next{right:-30px;}
-.zoom-content{
-  display:flex;flex-direction:column;align-items:center;gap:16px;
-  max-width:calc(100vw - 160px);
-  position:relative;
-}
-.zoom-content img{
-  max-width:100%;max-height:82vh;
-  border-radius:14px;
-  box-shadow:0 30px 100px rgba(0,0,0,.70);
-  display:block;
-}
-.zoom-caption{
-  font-size:13px;color:rgba(255,255,255,.55);
-  letter-spacing:.04em;text-align:center;
-}
-
-@media(max-width:980px){
-  .proyecto-card{grid-template-columns:1fr;}
-  .proyecto-visual{height:190px;}
-}
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .btn-contacto{display:none;}
-  .proyectos-header{margin-top:54px;}
-  .proyecto-card{padding:18px;}
-  .workflow{transform:scale(.82);}
-  .proyecto-info h2{font-size:24px;}
-  .zoom-arrow{width:40px;height:40px;font-size:24px;}
-  .zoom-prev{left:8px;}
-  .zoom-next{right:8px;}
-  .zoom-content{max-width:calc(100vw - 100px);}
-}
-.caso-modal{
-  position:fixed;inset:0;
-  background:rgba(3,7,18,.93);
-  backdrop-filter:blur(16px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999999;
-  padding:24px;
-}
+.zoom-content{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:calc(100vw - 160px);position:relative;}
+.zoom-content img{max-width:100%;max-height:82vh;border-radius:14px;box-shadow:0 30px 100px rgba(0,0,0,.70);display:block;}
+.zoom-caption{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.04em;text-align:center;}
+.caso-modal{position:fixed;inset:0;background:rgba(3,7,18,.93);backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;z-index:999999;padding:24px;}
 .caso-modal.active{display:flex;}
-.caso-modal__box{
-  position:relative;
-  width:min(860px,100%);
-  height:90vh;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid rgba(185,138,255,.25);
-  box-shadow:0 30px 100px rgba(0,0,0,.6);
-}
-.caso-modal__iframe{
-  width:100%;
-  height:100%;
-  border:none;
-}
-
-@media(max-width:980px){
+.caso-modal__box{position:relative;width:min(860px,100%);height:90vh;border-radius:18px;overflow:hidden;border:1px solid rgba(185,138,255,.25);box-shadow:0 30px 100px rgba(0,0,0,.6);}
+.caso-modal__iframe{width:100%;height:100%;border:none;}
+@media(max-width:980px){.proyecto-card{grid-template-columns:1fr;}.proyecto-visual{height:190px;}}
+@media(max-width:768px){.nav-links{display:none;}.btn-contacto{display:none;}.proyectos-header{margin-top:54px;}.proyecto-card{padding:18px;}.workflow{transform:scale(.82);}.proyecto-info h2{font-size:24px;}.zoom-arrow{width:40px;height:40px;font-size:24px;}.zoom-content{max-width:calc(100vw - 100px);}}
 </style>
 </head>
-
 <body>
-
 <section class="proyectos-page">
-
   <nav class="nav">
     <div class="nav-links">
       <a href="index.html">INICIO</a>
@@ -361,13 +78,11 @@ body{
     </div>
     <a href="#" class="btn-contacto">CONTACTO</a>
   </nav>
-
   <header class="proyectos-header">
     <div class="badge">PORTFOLIO · PROYECTOS SELECCIONADOS</div>
     <h1>Casos reales de automatización, IA y <span>Marketing Ops.</span></h1>
     <p>Una selección de proyectos desarrollados para optimizar procesos, ordenar información, automatizar tareas y facilitar la toma de decisiones.</p>
   </header>
-
   <div class="filtros">
     <button class="filtro active">Todos</button>
     <button class="filtro">Automatización</button>
@@ -375,68 +90,38 @@ body{
     <button class="filtro">Marketing Ops</button>
     <button class="filtro">Análisis</button>
   </div>
-
   <main class="proyectos-lista">
-<!-- PROYECTO 1 -->
-<article class="proyecto-card">
-  <div style="display:flex;flex-direction:column;gap:12px;">
-    <div
-      class="proyecto-visual zoomable"
-      onclick="openZoom(this)"
-      data-images='[
-        {"src":"Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png","caption":"Workflow principal"},
-        {"src":"Automatización de detección de Feedback crítico/Executions - Con Alerta.png","caption":"Ejecución con alerta"},
-        {"src":"Automatización de detección de Feedback crítico/mailing con cc.png","caption":"Mailing con copia"},
-        {"src":"Automatización de detección de Feedback crítico/Mailing sin CC.png","caption":"Mailing sin copia"}
-      ]'
-    >
-      <img
-        src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
-        alt="Workflow comentario vacío"
-        class="workflow-preview"
-      >
-      <span class="zoom-icon">🔍</span>
-    </div>
-    <span class="categoria" style="display:block;margin-top:4px;">Herramientas</span>
-    <div class="tags" style="margin-top:0;">
-      <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
-      <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
-      <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
-    </div>
-  </div>
-    <div
-      class="proyecto-visual zoomable"
-      onclick="openZoom(this)"
-      data-images='[
-        {"src":"Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png","caption":"Workflow principal"},
-        {"src":"Automatización de detección de Feedback crítico/Executions - Con Alerta.png","caption":"Ejecución con alerta"},
-        {"src":"Automatización de detección de Feedback crítico/mailing con cc.png","caption":"Mailing con copia"},
-        {"src":"Automatización de detección de Feedback crítico/Mailing sin CC.png","caption":"Mailing sin copia"}
-      ]'
-    >
-      <img
-        src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
-        alt="Workflow comentario vacío"
-        class="workflow-preview"
-      >
-      <span class="zoom-icon">🔍</span>
-    </div>
-  </div>
 
-  <div class="proyecto-info">
-    <h2>Automatización de detección de Feedback crítico</h2>
-    <p>Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual.</p>
-   <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
-    <div style="margin-top:20px;">
-      <span class="categoria" style="display:block;margin-bottom:10px;">Herramientas</span>
-      <div class="tags">
-        <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
-        <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
-        <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
+    <!-- PROYECTO 1 -->
+    <article class="proyecto-card">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div
+          class="proyecto-visual zoomable"
+          onclick="openZoom(this)"
+          data-images='[
+            {"src":"Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png","caption":"Workflow principal"},
+            {"src":"Automatización de detección de Feedback crítico/Executions - Con Alerta.png","caption":"Ejecución con alerta"},
+            {"src":"Automatización de detección de Feedback crítico/mailing con cc.png","caption":"Mailing con copia"},
+            {"src":"Automatización de detección de Feedback crítico/Mailing sin CC.png","caption":"Mailing sin copia"}
+          ]'
+        >
+          <img src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png" alt="Workflow comentario vacío" class="workflow-preview">
+          <span class="zoom-icon">🔍</span>
+        </div>
+        <span class="categoria">Herramientas</span>
+        <div class="tags">
+          <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
+          <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
+          <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
+        </div>
       </div>
-    </div>
-  </div>
-</article>
+      <div class="proyecto-info">
+        <h2>Automatización de detección de Feedback crítico</h2>
+        <p>Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual.</p>
+        <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
+      </div>
+    </article>
+
     <!-- PROYECTO 2 -->
     <article class="proyecto-card">
       <div class="proyecto-visual">
@@ -449,6 +134,7 @@ body{
         </div>
       </div>
       <div class="proyecto-info">
+        <div class="categoria">Automatización</div>
         <h2>Automatización de proceso de pagos y asignación de ofertas educativas</h2>
         <p>Workflow en GoHighLevel con integración de Mercado Pago que procesa pagos online y asistidos, aplica cupones de descuento, asigna automáticamente ofertas educativas en el aula virtual y actualiza el pipeline comercial.</p>
         <div class="tags">
@@ -505,49 +191,7 @@ body{
     <button class="zoom-arrow zoom-next" onclick="changeImage(1)">›</button>
   </div>
 </div>
-<script>
-let currentImages = [];
-let currentIndex  = 0;
 
-function openZoom(el) {
-  const raw = el.getAttribute('data-images');
-  if (!raw) return;
-  currentImages = JSON.parse(raw);
-  currentIndex  = 0;
-  renderZoom();
-  document.getElementById('zoomModal').classList.add('active');
-  document.addEventListener('keydown', handleKey);
-}
-
-function renderZoom() {
-  document.getElementById('zoomImage').src = currentImages[currentIndex].src;
-  document.getElementById('zoomImage').alt = currentImages[currentIndex].caption;
-  document.getElementById('zoomCaption').textContent =
-    (currentIndex + 1) + ' / ' + currentImages.length + ' · ' + currentImages[currentIndex].caption;
-  const arrows = document.querySelectorAll('.zoom-arrow');
-  arrows.forEach(a => a.style.display = currentImages.length > 1 ? 'flex' : 'none');
-}
-
-function changeImage(dir) {
-  currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
-  renderZoom();
-}
-
-function closeZoom() {
-  document.getElementById('zoomModal').classList.remove('active');
-  document.removeEventListener('keydown', handleKey);
-}
-
-function handleKey(e) {
-  if (e.key === 'ArrowRight') changeImage(1);
-  if (e.key === 'ArrowLeft')  changeImage(-1);
-  if (e.key === 'Escape')     closeZoom();
-}
-
-document.getElementById('zoomModal').addEventListener('click', function(e) {
-  if (e.target === this) closeZoom();
-});
-</script>
 <!-- MODAL VER CASO -->
 <div class="caso-modal" id="casoModal">
   <div class="caso-modal__box">
@@ -557,16 +201,50 @@ document.getElementById('zoomModal').addEventListener('click', function(e) {
 </div>
 
 <script>
-function openCaso(){
+let currentImages = [];
+let currentIndex = 0;
+
+function openZoom(el) {
+  const raw = el.getAttribute('data-images');
+  if (!raw) return;
+  currentImages = JSON.parse(raw);
+  currentIndex = 0;
+  renderZoom();
+  document.getElementById('zoomModal').classList.add('active');
+  document.addEventListener('keydown', handleKey);
+}
+function renderZoom() {
+  document.getElementById('zoomImage').src = currentImages[currentIndex].src;
+  document.getElementById('zoomImage').alt = currentImages[currentIndex].caption;
+  document.getElementById('zoomCaption').textContent = (currentIndex + 1) + ' / ' + currentImages.length + ' · ' + currentImages[currentIndex].caption;
+  const arrows = document.querySelectorAll('.zoom-arrow');
+  arrows.forEach(a => a.style.display = currentImages.length > 1 ? 'flex' : 'none');
+}
+function changeImage(dir) {
+  currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
+  renderZoom();
+}
+function closeZoom() {
+  document.getElementById('zoomModal').classList.remove('active');
+  document.removeEventListener('keydown', handleKey);
+}
+function handleKey(e) {
+  if (e.key === 'ArrowRight') changeImage(1);
+  if (e.key === 'ArrowLeft') changeImage(-1);
+  if (e.key === 'Escape') closeZoom();
+}
+document.getElementById('zoomModal').addEventListener('click', function(e) {
+  if (e.target === this) closeZoom();
+});
+function openCaso() {
   document.getElementById('casoModal').classList.add('active');
 }
-function closeCaso(){
+function closeCaso() {
   document.getElementById('casoModal').classList.remove('active');
 }
-document.getElementById('casoModal').addEventListener('click',function(e){
-  if(e.target===this) closeCaso();
+document.getElementById('casoModal').addEventListener('click', function(e) {
+  if (e.target === this) closeCaso();
 });
 </script>
-
 </body>
 </html>
