@@ -319,7 +319,7 @@ body{
   display:none;
   align-items:center;
   justify-content:center;
-  z-index:99999;
+  z-index:999999;
   padding:24px;
 }
 .caso-modal.active{display:flex;}
@@ -372,42 +372,40 @@ body{
   </div>
 
   <main class="proyectos-lista">
-
-    <!-- PROYECTO 1 -->
-    <article class="proyecto-card">
-      <div
-        class="proyecto-visual zoomable"
-        onclick="openZoom(this)"
-   data-images='[
-          {"src":"Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png","caption":"Workflow principal"},
-          {"src":"Automatización de detección de Feedback crítico/Executions - Con Alerta.png","caption":"Ejecución con alerta"},
-          {"src":"Automatización de detección de Feedback crítico/mailing con cc.png","caption":"Mailing con copia"},
-          {"src":"Automatización de detección de Feedback crítico/Mailing sin CC.png","caption":"Mailing sin copia"}
-        ]'
+<!-- PROYECTO 1 -->
+<article class="proyecto-card">
+  <div style="display:flex;flex-direction:column;gap:12px;">
+    <div
+      class="proyecto-visual zoomable"
+      onclick="openZoom(this)"
+      data-images='[
+        {"src":"Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png","caption":"Workflow principal"},
+        {"src":"Automatización de detección de Feedback crítico/Executions - Con Alerta.png","caption":"Ejecución con alerta"},
+        {"src":"Automatización de detección de Feedback crítico/mailing con cc.png","caption":"Mailing con copia"},
+        {"src":"Automatización de detección de Feedback crítico/Mailing sin CC.png","caption":"Mailing sin copia"}
+      ]'
+    >
+      <img
+        src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
+        alt="Workflow comentario vacío"
+        class="workflow-preview"
       >
-        <img
-          src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png"
-          alt="Workflow comentario vacío"
-          class="workflow-preview"
-        >
-        <span class="zoom-icon">🔍</span>
-      </div>
+      <span class="zoom-icon">🔍</span>
+    </div>
+    <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
+  </div>
 
-      <div class="proyecto-info">
-        <div class="categoria">Automatización</div>
-        <h2>Automatización de detección de Feedback crítico</h2>
-        <p>Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual.</p>
-        <div class="tags">
-          <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
-          <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
-          <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
-        </div>
-      <div class="card-actions">
-  <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
-</div>
-      </div>
-    </article>
-
+  <div class="proyecto-info">
+    <div class="categoria">Automatización</div>
+    <h2>Automatización de detección de Feedback crítico</h2>
+    <p>Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual.</p>
+    <div class="tags">
+      <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
+      <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
+      <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
+    </div>
+  </div>
+</article>
     <!-- PROYECTO 2 -->
     <article class="proyecto-card">
       <div class="proyecto-visual">
