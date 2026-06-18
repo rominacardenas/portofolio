@@ -229,7 +229,14 @@ body{
   background:rgba(185,138,255,.08);transition:.25s;cursor:pointer;
 }
 .card-btn:hover{background:linear-gradient(135deg,#461861,#6d28d9,#a71076);}
-
+.card-btn--primary{
+  background:linear-gradient(135deg,#6d28d9,#9b6cff);
+  border-color:#9b6cff;
+}
+.card-btn--primary:hover{
+  background:linear-gradient(135deg,#461861,#6d28d9,#a71076);
+  box-shadow:0 0 18px rgba(155,108,255,.35);
+}
 /* LIGHTBOX */
 .zoom-modal{
   position:fixed;inset:0;
@@ -304,6 +311,33 @@ body{
   .zoom-next{right:8px;}
   .zoom-content{max-width:calc(100vw - 100px);}
 }
+.caso-modal{
+  position:fixed;inset:0;
+  background:rgba(3,7,18,.93);
+  backdrop-filter:blur(16px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+  padding:24px;
+}
+.caso-modal.active{display:flex;}
+.caso-modal__box{
+  position:relative;
+  width:min(860px,100%);
+  height:90vh;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(185,138,255,.25);
+  box-shadow:0 30px 100px rgba(0,0,0,.6);
+}
+.caso-modal__iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+@media(max-width:980px){
 </style>
 </head>
 
@@ -367,10 +401,10 @@ body{
           <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
           <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
         </div>
-        <div class="card-actions">
-          <a href="#" class="card-btn">Ver caso →</a>
-          <a href="#" class="card-btn">Workflow</a>
-        </div>
+       <div class="card-actions">
+  <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
+  <a href="#" class="card-btn">Workflow</a>
+</div>
       </div>
     </article>
 
@@ -484,6 +518,25 @@ function handleKey(e) {
 
 document.getElementById('zoomModal').addEventListener('click', function(e) {
   if (e.target === this) closeZoom();
+});
+</script>
+<!-- MODAL VER CASO -->
+<div class="caso-modal" id="casoModal">
+  <div class="caso-modal__box">
+    <button class="zoom-close" onclick="closeCaso()">×</button>
+    <iframe src="feedback-critico.pdf" class="caso-modal__iframe"></iframe>
+  </div>
+</div>
+
+<script>
+function openCaso(){
+  document.getElementById('casoModal').classList.add('active');
+}
+function closeCaso(){
+  document.getElementById('casoModal').classList.remove('active');
+}
+document.getElementById('casoModal').addEventListener('click',function(e){
+  if(e.target===this) closeCaso();
 });
 </script>
 
