@@ -64,6 +64,13 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
 .caso-modal__iframe{width:100%;height:100%;border:none;}
 @media(max-width:980px){.proyecto-card{grid-template-columns:1fr;}.proyecto-visual{height:190px;}}
 @media(max-width:768px){.nav-links{display:none;}.btn-contacto{display:none;}.proyectos-header{margin-top:54px;}.proyecto-card{padding:18px;}.workflow{transform:scale(.82);}.proyecto-info h2{font-size:24px;}.zoom-arrow{width:40px;height:40px;font-size:24px;}.zoom-content{max-width:calc(100vw - 100px);}}
+.proyecto-col-left{display:flex;flex-direction:column;gap:14px;}
+.herramientas-label{font-size:12px;font-weight:700;letter-spacing:.05em;color:#c9a7ff;}
+.proyecto-info{display:flex;flex-direction:column;justify-content:center;gap:12px;}
+.proyecto-info h2{font-size:25px;line-height:1.14;letter-spacing:-.4px;max-width:620px;}
+.proyecto-info p{color:#d7d7d7;font-size:16px;line-height:1.6;max-width:620px;}
+.card-btn--cta{display:inline-block;align-self:flex-start;padding:14px 30px;font-size:15px;font-weight:800;letter-spacing:.03em;color:#fff;text-decoration:none;background:linear-gradient(135deg,#6d28d9,#9b6cff,#a71076);border-radius:14px;box-shadow:0 0 24px rgba(155,108,255,.5),0 4px 16px rgba(0,0,0,.3);transition:.25s;cursor:pointer;font-family:inherit;}
+.card-btn--cta:hover{background:linear-gradient(135deg,#461861,#7c3aed,#c026d3);box-shadow:0 0 38px rgba(155,108,255,.7);transform:translateY(-2px);}
 </style>
 </head>
 <body>
@@ -94,8 +101,7 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
 
     <!-- PROYECTO 1 -->
     <article class="proyecto-card">
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div
+<div class="proyecto-col-left">        <div
           class="proyecto-visual zoomable"
           onclick="openZoom(this)"
           data-images='[
@@ -108,8 +114,7 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
           <img src="Automatización de detección de Feedback crítico/CANVAS - Workflow comentario vacio.png" alt="Workflow comentario vacío" class="workflow-preview">
           <span class="zoom-icon">🔍</span>
         </div>
-        <span class="categoria">Herramientas</span>
-        <div class="tags">
+<div class="herramientas-label">Herramientas</div>        <div class="tags">
           <span class="tag"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n">n8n</span>
           <span class="tag"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">JavaScript</span>
           <span class="tag"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">Google Sheets</span>
@@ -118,8 +123,7 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
       <div class="proyecto-info">
         <h2>Automatización de detección de Feedback crítico</h2>
         <p>Workflow en N8N que analiza comentarios de encuestas almacenadas en Google Sheets, utiliza modelos de lenguaje para detectar feedback crítico y automatiza la generación de alertas y registros de métricas. Optimiza la detección temprana de incidencias y reduce la revisión manual.</p>
-        <a href="#" class="card-btn card-btn--primary" onclick="openCaso(); return false;">Ver caso →</a>
-      </div>
+<a href="#" class="card-btn--cta" onclick="openCaso(); return false;">Ver caso →</a>      </div>
     </article>
 
     <!-- PROYECTO 2 -->
