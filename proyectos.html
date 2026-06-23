@@ -147,9 +147,9 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
           <span class="tag">Workflows</span>
         </div>
         <div class="card-actions">
-          <a href="#" class="card-btn">Ver caso →</a>
-          <a href="#" class="card-btn">Workflow</a>
-        </div>
+  <a href="#" class="card-btn card-btn--cta" onclick="openModal('pagos-ghl.pdf'); return false;">Ver caso →</a>
+  <a href="#" class="card-btn" onclick="openModal('workflow-ghl.pdf'); return false;">Ver workflow →</a>
+</div>
       </div>
     </article>
 
@@ -241,6 +241,10 @@ document.getElementById('zoomModal').addEventListener('click', function(e) {
   if (e.target === this) closeZoom();
 });
 function openCaso() {
+  openModal('feedback-critico.pdf');
+}
+function openModal(src) {
+  document.querySelector('.caso-modal__iframe').src = src;
   document.getElementById('casoModal').classList.add('active');
 }
 function closeCaso() {
