@@ -128,14 +128,10 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
 
     <!-- PROYECTO 2 -->
     <article class="proyecto-card">
-      <div class="proyecto-visual">
-        <div class="workflow">
-          <div class="node">📩</div>
-          <div class="arrow"></div>
-          <div class="node">⚡</div>
-          <div class="arrow"></div>
-          <div class="node">✅</div>
-        </div>
+    <div class="proyecto-visual zoomable" onclick="openModal('pagos-ghl.pdf'); return false;" style="cursor:pointer;">
+  <img src="imagenghl.png" alt="Workflow GoHighLevel" class="workflow-preview">
+  <span class="zoom-icon">🔍</span>
+</div>
       </div>
       <div class="proyecto-info">
         <div class="categoria">Automatización</div>
@@ -146,9 +142,8 @@ body{font-family:'Inter',sans-serif;background:#030712;color:#fff;overflow-x:hid
           <span class="tag">Mercado Pago</span>
           <span class="tag">Workflows</span>
         </div>
-        <div class="card-actions">
-  <a href="#" class="card-btn card-btn--cta" onclick="openModal('pagos-ghl.pdf'); return false;">Ver caso →</a>
-  <a href="#" class="card-btn" onclick="openModal('workflow-ghl.pdf'); return false;">Ver workflow →</a>
+       <div class="card-actions">
+  <a href="#" class="card-btn card-btn--cta" onclick="openModal('workflow-ghl.pdf'); return false;">Ver caso →</a>
 </div>
       </div>
     </article>
